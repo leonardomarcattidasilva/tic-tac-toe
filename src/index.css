@@ -34,7 +34,7 @@ header {
 }
 
 header img {
-  width: 8rem;
+  width: 4rem;
   object-fit: contain;
   margin: 3rem auto 1rem auto;
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
@@ -42,15 +42,14 @@ header img {
 
 h1 {
   font-family: 'Caprasimo', cursive;
-  font-size: 3rem;
   margin: 0 auto 3rem auto;
   color: #3f3b00;
 }
 
 #game-container {
   max-width: 45rem;
-  margin: 3rem auto;
-  padding: 2rem;
+  margin: 1rem auto;
+  padding: 1rem;
   border-radius: 6px;
   background: linear-gradient(#383624, #282617);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
