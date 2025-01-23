@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 const initialGameBoard = [
    [null, null, null],
@@ -7,15 +7,13 @@ const initialGameBoard = [
 ]
 
 
-const GameBoard = () => {
-   const [gameBoard, setGameBoard] = useState(initialGameBoard);
+const GameBoard = ({ onSelectedSquare, turns }) => {
+   let gameBoard = initialGameBoard
 
-   const handleSelectedSquare = (rowIndex, colIndex, PlayerSymbol) => {
-      setGameBoard(prevState => {
-         const newState = [...prevState.map(innerArray => [...innerArray])]
-         newState[rowIndex][colIndex] = 'X';
-         return newState
-      })
+   for (const turn of turns) {
+      const { square, player } = turn
+      const { row, col } = square
+      gameBoard[row][col] = player
    }
 
    return <ol id="game-board">
@@ -25,7 +23,9 @@ const GameBoard = () => {
                {
                   row.map((PlayerSymbol, colIndex) => {
                      return <li key={colIndex}>
-                        <button type="button" onClick={() => handleSelectedSquare(rowIndex, colIndex, PlayerSymbol)} >{PlayerSymbol}</button>
+                        <button type="button" onClick={() => onSelectedSquare(rowIndex, colIndex)} disabled={PlayerSymbol !== null}>
+                           {PlayerSymbol}
+                        </button>
                      </li>
                   })
                }
