@@ -1,36 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import Player from "./components/Player"
 import GameBoard from "./components/GameBoard"
-import Log from "./components/Log"
 import GameOver from './components/GameOver'
-import { deriveGameTurns, players, checkWinner, deriveGameBoard } from './helpers'
-
+import { players } from './helpers'
+import useMain from "./hooks/userMain"
 
 const App = () => {
-   const [player, setPlayer] = useState(players)
-   const [gameTurns, setGameTurns] = useState([])
-   const activePlayer = deriveGameTurns(gameTurns)
-   
-   const gameBoard = deriveGameBoard(gameTurns)
-   const winner = checkWinner(gameBoard, player)
-
-   const handlePlayerName = (symbol, name) => {
-      setPlayer(prevState => {
-         return { ...prevState, [symbol]: name }
-      })
-   }
-
-   const hasDraw = gameTurns.length === 9 && !winner
-
-   const handleSelectedSquare = (rowIndex, colIndex) => {
-      setGameTurns(prevState => {
-         const currentPlayer = deriveGameTurns(prevState)
-         const newTurns = [{ square: { row: rowIndex, col: colIndex }, player: currentPlayer }, ...prevState]
-         return newTurns
-      })
-   }
-
-   const handleRematch = () => setGameTurns([])
+   const { activePlayer, gameBoard, winner, handlePlayerName, hasDraw, handleSelectedSquare, handleRematch } = useMain()
 
    return <main>
       <div id="game-container">

@@ -1,8 +1,6 @@
 import React from "react";
 
-
-const GameBoard = ({ onSelectedSquare, board}) => {
-
+const GameBoard = ({ onSelectedSquare, board }) => {
    return <ol id="game-board">
       {
          board.map((row, rowIndex) => <li key={rowIndex}>
