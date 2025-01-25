@@ -42,8 +42,6 @@ const App = () => {
          <GameBoard onSelectedSquare={handleSelectedSquare} board={gameBoard} />
          {(winner || hasDraw) && <GameOver winner={winner} onRematch={handleRematch} />}
       </div>
-      <Log turns={gameTurns} />
-
    </main>
 }
 
