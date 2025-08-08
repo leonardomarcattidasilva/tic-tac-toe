@@ -39,8 +39,9 @@ docker run -d -h tic-tac-toe --name tic-tac-toe -p 3000:3000 tic-tac-toe
 http://ip_host:3000
 
 
-📄 Licença
+## 📄 Licença
 Este projeto está licenciado sob a MIT License.
 
 Feito com 💙 por Leonardo Marcatti
-Entre em contato! https://www.linkedin.com/in/leonardomarcattidasilvalms/
+Entre em contato!
+## https://www.linkedin.com/in/leonardomarcattidasilvalms/
