@@ -35,7 +35,6 @@ docker build -t tic-tac-toe .
 docker run -d -h tic-tac-toe --name tic-tac-toe -p 3000:3000 tic-tac-toe
 
 ## Apontar o navegador para a aplicação
-
 http://ip_host:3000
 
 
