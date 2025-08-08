@@ -1,4 +1,4 @@
-# 🚀 Jogo da Velha - Tic-Tac-Toe
+# 🎮 Jogo da Velha - Tic-Tac-Toe
 
 Este repositório contém uma aplicação frontend desenvolvida com **ReactJS** e empacotada em um container Docker para facilitar a execução em diferentes ambientes.
 
